@@ -21,18 +21,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: yarn install
+    - name: npm run install
       run: |
-        yarn install
-    - name: yarn test
+        npm run install
+    - name: npm run test
       run: |
-        yarn test 
+        npm run test 
       env:
         CI: true
       
-    - name: yarn build
+    - name: npm run build
       run: |
-        yarn run build --if-present
+        npm run run build --if-present
     
     - name: Add remote origin
       run: |
