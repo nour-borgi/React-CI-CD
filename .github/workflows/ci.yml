@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [16.x, 12.x]
+        node-version: [12.x]
     
     steps:
     - uses: actions/checkout@v1
@@ -23,20 +23,14 @@ jobs:
     
     - name: npm install
       run: |
-        npm install
-    - name: npm run test
+        yarn install
+    - name: yarn test
       run: |
-        npm run test 
+        yarn test 
       env:
         CI: true
       
-    - name: npm run build
+    - name: yarn build
       run: |
-        npm run run build --if-present
+        yarn run build --if-present
     
-    - name: Add remote origin
-      run: |
-        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-    - name: Deploy to Heroku
-      run: |
-        git push heroku HEAD:master -f
