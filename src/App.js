@@ -15,8 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome to the basic application react 
-          RT5 - Nour El Houda Borgi
+          Welcome RT5 - Nour El Houda Borgi
         </a>
       </header>
     </div>
